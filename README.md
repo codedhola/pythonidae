@@ -107,9 +107,17 @@ This datatype is used to hold a list of datatypes in sequence, and this starts c
   software_stacks = ["javascript", "python", "c++"]
 ```
 
-### _tuple_
+# _tuple_
 
-### _set_
+Tuple Like lists, but they are used for immutable thing (that don't change)
+To declare a tuple we => `my_tuple = ('apple','grapes','mango', 'grapes')`
+
+# _set_
+
+Set is an unordered collection of unique objects. sets are created like object but only values are required
+=> `my_set = { 1, 2, 3, 4, 5 }`
+
+Note => They are no duplicates in set
 
 dict
 
@@ -268,4 +276,167 @@ NAME = 'samuel'
 
   # Dictionary Comprehension
   {key: value for key, value in new_dict.items() if key == 'age' or key == 'name'} # {'name': 'Andrei', 'age': 32} --> Filter dict by keys
+```
+
+# 'tuples' methods
+
+```py
+  len(my_tuple)                          # 4
+  my_tuple[2]                            # mango
+  my_tuple[-1]                           # 'grapes'
+
+  # Immutability
+  my_tuple[1] = 'donuts'  # TypeError
+  my_tuple.append('candy')# AttributeError
+
+  # Methods
+  my_tuple.index('grapes') # 1
+  my_tuple.count('grapes') # 2
+
+
+```
+
+# 'sets' methods
+
+```py
+  new_set = {1, 2, 3, 4, 5, 6}
+
+  my_set.remove(100)      # {1} --> Raises KeyError if element not found
+  my_set.discard(100)     # {1} --> Doesn't raise an error if element not found
+  my_set.clear()          # {}
+  new_set = {1,2,3}.copy()# {1,2,3}
+
+  # set method
+  set1 = {1,2,3}
+  set2 = {3,4,5}
+  set3 = set1.union(set2)               # {1,2,3,4,5}
+  set4 = set1.intersection(set2)        # {3}
+  set5 = set1.difference(set2)          # {1, 2}
+  set6 = set1.symmetric_difference(set2)# {1, 2, 4, 5}
+  set1.issubset(set2)                   # False
+  set1.issuperset(set2)                 # False
+  set1.isdisjoint(set2)                 # False --> return True if two sets have a null intersection.
+
+```
+
+# Conditionals
+
+Comparison Operators and Logical Operators
+
+```py
+
+==                   # equal values
+!=                   # not equal
+>                    # left operand is greater than right operand
+<                    # left operand is less than right operand
+>=                   # left operand is greater than or equal to right operand
+<=                   # left operand is less than or equal to right operand
+<element> is <element> # check if two operands refer to same object in memory
+Logical Operators
+1 < 2 and 4 > 1 # True
+1 > 3 or 4 > 1  # True
+1 is not 4      # True
+not True        # False
+1 not in [2,3,4]# True
+
+
+if <condition that evaluates to boolean>:
+  # perform action1
+elif <condition that evaluates to boolean>:
+  # perform action2
+else:
+  # perform action3
+
+## TERNARY OPERATOR IN PYTHON
+is_friend = True
+can_message = "Message Allowed" if is_friend else "not allowed"
+
+```
+
+# Control flow
+
+```py
+  my_list = [1,2,3]
+  my_tuple = (1,2,3)
+  my_list2 = [(1,2), (3,4), (5,6)]
+  my_dict = {'a': 1, 'b': 2. 'c': 3}
+
+  for num in my_list:
+      print(num) # 1, 2, 3
+
+  for num in my_tuple:
+      print(num) # 1, 2, 3
+
+  for num in my_list2:
+      print(num) # (1,2), (3,4), (5,6)
+
+  for num in '123':
+      print(num) # 1, 2, 3
+
+  for idx,value in enumerate(my_list):
+      print(idx) # get the index of the item
+      print(value) # get the value
+
+  for k,v in my_dict.items(): # Dictionary Unpacking
+      print(k) # 'a', 'b', 'c'
+      print(v) # 1, 2, 3
+
+  while <condition that evaluates to boolean>:
+    # action
+    if <condition that evaluates to boolean>:
+      break # break out of while loop
+    if <condition that evaluates to boolean>:
+      continue # continue to the next line in the block
+
+    # WHILE LOOPS IS GREAT WHEN YOU DON'T KNOW WHEN THE TASK IS END
+    # EXAMPLE
+    # waiting until user quits
+  msg = ''
+  while msg != 'quit':
+      msg = input("What should I do?")
+      print(msg)
+
+
+```
+
+_Range_
+
+```py
+  for _ in range(0, 5):
+    print(_)
+
+  for _ in range(0, 10, 2):
+    print(_)
+
+  for _ in range(10, 1, -1):
+    print(_)
+
+```
+
+_Enumerate_
+
+This method returns both the index and the value counter of the item that is being looped through
+
+```py
+  for i, el in enumerate('helloo'):
+  print(f'{i}, {el}')
+  # 0, h
+  # 1, e
+  # 2, l
+  # 3, l
+  # 4, o
+  # 5, o
+
+```
+
+# Functions
+
+A function in python is defined using the '_def_' key word then naming the function.
+
+```py
+  def add(msg):
+    return msg
+
+  print(add("Hello functions")) # Hello functions
+
 ```
