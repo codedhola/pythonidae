@@ -1,6 +1,6 @@
 # pythonidae
 
-A simple python practising space
+A simple python practicing space
 
 # DATATYPES
 
